@@ -1,6 +1,6 @@
 "use client";
 
-import { useApartments } from "@/app/context/ApartmentsContext";
+import { useApartments } from "@/context/ApartmentsContext";
 import MapView from "./MapView";
 import styles from "@/app/styles/apartments.module.css";
 
@@ -29,7 +29,7 @@ export default function ApartmentDetail() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <p className="text-gray-600 text-sm">Precio</p>
-              <p className="text-3xl font-bold text-blue-600">${selected.price}/mes</p>
+              <p className="text-3xl font-bold text-blue-600">€{selected.price}/mes</p>
             </div>
             <div>
               <p className="text-gray-600 text-sm">Ubicación</p>

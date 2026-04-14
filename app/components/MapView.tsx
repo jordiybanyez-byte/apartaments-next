@@ -19,6 +19,7 @@ type POI = {
   lon: number;
   tags?: {
     amenity?: string;
+    railway?: string;
     name?: string;
   };
 };

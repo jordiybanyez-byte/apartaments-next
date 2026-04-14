@@ -42,7 +42,7 @@ export default function ApartmentDetailPage() {
           <div className="bg-white rounded-lg shadow-md p-6 sticky top-4">
             <div className="mb-6">
               <p className="text-gray-600 text-sm font-semibold">PRECIO</p>
-              <p className="text-4xl font-bold text-blue-600">${apartment.price}</p>
+              <p className="text-4xl font-bold text-blue-600">€{apartment.price}</p>
               <p className="text-gray-600">/mes</p>
             </div>
 

@@ -10,7 +10,7 @@ export default function ApartmentsPage() {
   return (
     <div className={styles.grid}>
       {apartments.map((apt) => (
-        <Link key={apt.id} href={`/apartments/${apt.id}`}>
+        <Link key={apt.id} href={`/apartments/€{apt.id}`}>
           <div className={styles.card}>
             <h3>{apt.title}</h3>
             <p>{apt.price}€/mes</p>

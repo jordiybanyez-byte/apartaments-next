@@ -22,7 +22,7 @@ export default function ApartmentCard({ apartment }: ApartmentCardProps) {
   const emoji = emojis[parseInt(apartment.id) % emojis.length];
 
   return (
-    <Link href={`/apartments/${apartment.id}`}>
+    <Link href={`/apartments/€{apartment.id}`}>
       <div className={styles.card}>
         {/* Image Placeholder */}
         <div className={styles.cardImage}>
@@ -36,7 +36,7 @@ export default function ApartmentCard({ apartment }: ApartmentCardProps) {
 
           {/* Price Section */}
           <div className={styles.priceSection}>
-            <span className={styles.cardPrice}>${apartment.price}</span>
+            <span className={styles.cardPrice}>€{apartment.price}</span>
             <span className={styles.pricePeriod}>/mes</span>
           </div>
 
