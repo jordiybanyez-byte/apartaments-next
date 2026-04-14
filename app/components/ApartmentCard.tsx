@@ -17,7 +17,6 @@ type ApartmentCardProps = {
 };
 
 export default function ApartmentCard({ apartment }: ApartmentCardProps) {
-  // Array de emojis para las imágenes placeholder
   const emojis = ["🏠", "🏡", "🏢", "🏰", "🏘️", "🏗️", "🏛️", "🏭", "🏬", "🏪", "🏫"];
   const emoji = emojis[parseInt(apartment.id) % emojis.length];
 

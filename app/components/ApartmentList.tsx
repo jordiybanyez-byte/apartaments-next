@@ -17,13 +17,13 @@ export default function ApartmentList() {
       apartment.description.toLowerCase().includes(searchTerm.toLowerCase());
 
     let matchesPrice = true;
-    if (priceFilter === "Menos de $1500") {
+    if (priceFilter === "Menos de €1500") {
       matchesPrice = apartment.price < 1500;
-    } else if (priceFilter === "$1500 - $2500") {
+    } else if (priceFilter === "€1500 - €2500") {
       matchesPrice = apartment.price >= 1500 && apartment.price <= 2500;
-    } else if (priceFilter === "$2500 - $3500") {
+    } else if (priceFilter === "€2500 - €3500") {
       matchesPrice = apartment.price >= 2500 && apartment.price <= 3500;
-    } else if (priceFilter === "Más de $3500") {
+    } else if (priceFilter === "Más de €3500") {
       matchesPrice = apartment.price > 3500;
     }
 
@@ -34,7 +34,7 @@ export default function ApartmentList() {
     <div className={styles.container}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        <h1 className={styles.sectionTitle}>Apartamentos en Barcelona</h1>
+        <h1 className={styles.sectionTitle}>🏡 Apartamentos Violeta 🏡</h1>
         <p className={styles.sectionSubtitle}>
           Encuentra tu alojamiento ideal en las mejores ubicaciones de la ciudad
         </p>
@@ -55,10 +55,10 @@ export default function ApartmentList() {
           onChange={(e) => setPriceFilter(e.target.value)}
         >
           <option value="">Filtrar por precio</option>
-          <option value="Menos de $1500">Menos de $1500</option>
-          <option value="$1500 - $2500">$1500 - $2500</option>
-          <option value="$2500 - $3500">$2500 - $3500</option>
-          <option value="Más de $3500">Más de $3500</option>
+          <option value="Menos de €1500">Menos de €1500</option>
+          <option value="€1500 - €2500">€1500 - €2500</option>
+          <option value="€2500 - €3500">€2500 - €3500</option>
+          <option value="Más de €3500">Más de €3500</option>
         </select>
       </section>
 

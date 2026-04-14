@@ -19,7 +19,7 @@ type ApartmentsContextType = {
   setSelected: (apt: Apartment | null) => void;
 };
 
-// 2. Context bien tipado (IMPORTANTE)
+// 2. Context bien tipado 
 const ApartmentsContext = createContext<ApartmentsContextType | undefined>(undefined);
 
 // 3. Provider con children tipado

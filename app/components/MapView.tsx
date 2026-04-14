@@ -24,9 +24,9 @@ type POI = {
   };
 };
 
-/* ============ ICONOS PERSONALIZADOS CON SVG ============ */
 
-// Icono para el apartamento (rojo con brillo)
+
+// Icono para el apartamento 
 const apartmentIcon = new L.Icon({
   iconUrl:
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF6B6B;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23C92A2A;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25c0-8-7-15-15-15zm0 20c-3 0-5-2-5-5s2-5 5-5 5 2 5 5-2 5-5 5z' fill='url(%23grad1)' /%3E%3C/svg%3E",
@@ -38,7 +38,7 @@ const apartmentIcon = new L.Icon({
   shadowAnchor: [12, 41],
 });
 
-// Icono para escuelas (azul)
+// Icono para escuelas 
 const schoolIcon = new L.Icon({
   iconUrl:
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2360A5FA;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231E40AF;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25c0-8-7-15-15-15zm0 20c-3 0-5-2-5-5s2-5 5-5 5 2 5 5-2 5-5 5z' fill='url(%23grad2)' /%3E%3C/svg%3E",
@@ -50,7 +50,7 @@ const schoolIcon = new L.Icon({
   shadowAnchor: [12, 41],
 });
 
-// Icono para metro/estación (púrpura)
+// Icono para metro/estación
 const stationIcon = new L.Icon({
   iconUrl:
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23A78BFA;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%235B21B6;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25c0-8-7-15-15-15zm0 20c-3 0-5-2-5-5s2-5 5-5 5 2 5 5-2 5-5 5z' fill='url(%23grad3)' /%3E%3C/svg%3E",
@@ -62,9 +62,7 @@ const stationIcon = new L.Icon({
   shadowAnchor: [12, 41],
 });
 
-/* ======================================== */
-/*        COMPONENT                        */
-/* ======================================== */
+//  Componente principal del mapa que muestra el apartamento y los POIs cercanos (escuelas y estaciones) 
 
 export default function MapView({ apartment }: { apartment: Apartment }) {
   const [pois, setPois] = useState<POI[]>([]);
