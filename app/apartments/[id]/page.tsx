@@ -2,9 +2,15 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import dynamic from "next/dynamic";
 import { useApartments } from "../../context/ApartmentsContext";
-import MapView from "../../components/MapView";
 import styles from "@/styles/detail.module.css";
+
+// Dynamic import to avoid SSR issues with Leaflet
+const MapView = dynamic(() => import("../../components/MapView"), {
+  ssr: false,
+  loading: () => <div className={styles.mapLoading}>Cargando mapa...</div>
+});
 
 export default function ApartmentDetailPage() {
   const { id } = useParams();
