@@ -85,7 +85,7 @@ export default function MapView({ apartment }: { apartment: Apartment }) {
           out center;
         `;
 
-        console.log("Intentando cargar POIs desde Overpass...");
+        
 
         // Crear AbortController con timeout de 7 segundos
         const controller = new AbortController();
@@ -110,11 +110,11 @@ export default function MapView({ apartment }: { apartment: Apartment }) {
           el.tags?.railway === "subway_entrance"
         );
 
-        console.log(`✓ Cargados ${elements.length} POIs desde Overpass`);
+        
         setPois(elements);
         
       } catch (err) {
-        console.log("No se pudo cargar desde Overpass, usando datos simulados...");
+        
         
         // Fallback: generar datos simulados de escuelas y estaciones cercanas
         const fallbackPOIs: POI[] = [
