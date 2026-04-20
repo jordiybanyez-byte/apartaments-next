@@ -57,7 +57,7 @@ export default function ApartmentDetailPage() {
             <div className={`${styles.card} ${styles.cardBorderTop} ${styles.cardBorderBlue} ${styles.priceCard}`}>
               <span className={styles.priceLabel}>Precio mensual</span>
               <div>
-                <span className={styles.priceValue}>${apartment.price}</span>
+                <span className={styles.priceValue}>€{apartment.price}</span>
                 <span className={styles.priceUnit}>/mes</span>
               </div>
               <p className={styles.availableText}>Disponible inmediatamente</p>
