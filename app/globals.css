@@ -27,6 +27,30 @@
     sans-serif;
   --font-mono: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+
+  /* Toggle */
+  --toggle-bg: #ffffff;
+  --toggle-border: #e2e8f0;
+  
+  /* Theme colors */
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #ffffff;
+  --text-primary: #1a202c;
+  --text-secondary: #666666;
+  --card-bg: #ffffff;
+  --card-border: #f0f0f0;
+}
+
+[data-theme="dark"] {
+  --toggle-bg: #2d3748;
+  --toggle-border: #4a5568;
+  
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --text-primary: #f7fafc;
+  --text-secondary: #a0aec0;
+  --card-bg: #2d3748;
+  --card-border: #4a5568;
 }
 
 /* ====================================
@@ -46,12 +70,13 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  color: var(--gray-900);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 #__next {
@@ -129,7 +154,8 @@ select {
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: white;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 input:focus,
@@ -138,6 +164,11 @@ select:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--gray-500);
 }
 
 /* ====================================

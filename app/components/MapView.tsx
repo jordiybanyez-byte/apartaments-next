@@ -38,24 +38,24 @@ const apartmentIcon = new L.Icon({
   shadowAnchor: [12, 41],
 });
 
-// Icono para escuelas 
+// Icono para escuelas (verde - forma de edificio escolar)
 const schoolIcon = new L.Icon({
   iconUrl:
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2360A5FA;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231E40AF;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25c0-8-7-15-15-15zm0 20c-3 0-5-2-5-5s2-5 5-5 5 2 5 5-2 5-5 5z' fill='url(%23grad2)' /%3E%3C/svg%3E",
-  iconSize: [30, 40],
-  iconAnchor: [15, 40],
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2L4 14h4v22h12V24h4v12h12V14h4L20 2z' fill='%2310B981'/%3E%3Cpath d='M20 2L4 14h4v22h12V24h4v12h12V14h4L20 2zm-8 28h8v8h-8v-8z' fill='%23047851'/%3E%3C/svg%3E",
+  iconSize: [32, 40],
+  iconAnchor: [16, 40],
   popupAnchor: [0, -40],
   shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
   shadowSize: [41, 41],
   shadowAnchor: [12, 41],
 });
 
-// Icono para metro/estación
+// Icono para metro/estación (naranja - forma de estación/tren)
 const stationIcon = new L.Icon({
   iconUrl:
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23A78BFA;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%235B21B6;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25c0-8-7-15-15-15zm0 20c-3 0-5-2-5-5s2-5 5-5 5 2 5 5-2 5-5 5z' fill='url(%23grad3)' /%3E%3C/svg%3E",
-  iconSize: [30, 40],
-  iconAnchor: [15, 40],
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='2' y='8' width='36' height='26' rx='2' fill='%23F97316'/%3E%3Crect x='6' y='12' width='28' height='8' fill='%23FFFBEB'/%3E%3Ccircle cx='10' cy='34' r='3' fill='%23181613'/%3E%3Ccircle cx='30' cy='34' r='3' fill='%23181613'/%3E%3Crect x='16' y='2' width='8' height='6' fill='%23F97316'/%3E%3Cpath d='M14 22h12v4H14z' fill='%2310B981'/%3E%3Crect x='14' y='22' width='5' height='12' fill='%2310B981'/%3E%3Crect x='21' y='22' width='5' height='12' fill='%2310B981'/%3E%3C/svg%3E",
+  iconSize: [32, 40],
+  iconAnchor: [16, 40],
   popupAnchor: [0, -40],
   shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
   shadowSize: [41, 41],
@@ -187,7 +187,7 @@ export default function MapView({ apartment }: { apartment: Apartment }) {
         if (!isSchool && !isStation) return null;
 
         const icon = isSchool ? schoolIcon : stationIcon;
-        const label = isSchool ? "🏫 Escuela" : "🚇 Estación/Metro";
+        const label = isSchool ? "ESCUELA" : "METRO/TREN";
         const name = p.tags?.name ? p.tags.name : label;
 
         return (

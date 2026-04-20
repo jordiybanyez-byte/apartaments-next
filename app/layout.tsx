@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ApartmentsProvider } from "./context/ApartmentsContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import ThemeToggle from "./components/ThemeToggle";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,8 +30,13 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col" style={{ background: "#ffffff" }}>
-        <ApartmentsProvider>{children}</ApartmentsProvider>
+      <body className="min-h-full flex flex-col" style={{ background: "var(--bg-primary)" }}>
+        <ThemeProvider>
+          <ApartmentsProvider>
+            <ThemeToggle />
+            {children}
+          </ApartmentsProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
